@@ -1,0 +1,88 @@
+sorce: https://www.csie.ntu.edu.tw/~b98902112/cpp_and_algo/cpp02/stack.html
+堆疊介紹
+Stack 是一種 先進後出FILO (等同 後進先出LIFO) 的資料結構
+
+FILO : First In, Last Out
+
+LIFO : Last In, First Out
+
+
+河內塔 故事中的每一個柱子都是 Stack 結構
+
+柱子最上方的盤子，一定是最先被拿起來的
+
+
+平常生活有時候也會發生 Stack 的情境，人會最優先處理最後發生的事
+
+做事做到一半時，突然一件更緊急的事發生
+
+這時就會先把打斷的事做完，才回來繼續做原來的事
+
+範例 - 自製Stack
+[操作說明]
+push x : 放入整數 x 進入stack
+
+pop : 將stack中的整數拿出來
+
+[input]
+push 9
+push 5
+push 2
+push 7
+pop
+pop
+pop
+push 1
+pop
+pop
+pop
+[output]
+ pop: 7
+ pop: 2
+ pop: 5
+ pop: 1
+ pop: 9
+ pop: nothing in stack
+[說明]
+讓 stack_top 永遠等於 最後一個元素的位置+1
+
+一開始 stack 中沒有任何元素，令 stack_top = 0
+
+當 stack 中沒有元素時就不能 pop
+
+[code]
+#include<iostream>
+using namespace std;
+
+int stack[105], stack_top;
+
+
+int main ()
+{
+    string cmd;
+    int i;
+
+    stack_top = 0;
+
+    while( cin >> cmd )
+    {
+        if( cmd == "push" )
+        {
+            cin >> i;
+            stack[stack_top] = i;
+            stack_top++;
+        }
+        else if( cmd == "pop" )
+        {
+            if( stack_top == 0 )
+                cout << " pop: nothing in stack" << endl;
+            else
+            {
+                cout << " pop: " << stack[stack_top-1] << endl;
+                stack_top--;
+            }
+        }
+    }
+
+    return 0;
+}

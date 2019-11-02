@@ -1,7 +1,7 @@
 # #include \<ToWhomItMayConcern>
 int main( ){
 
-   cout<<"After a long and tough contemplation, I ultimately made up my decision.
+   cout << "After a long and tough contemplation, I ultimately made up my decision.
   
    I am not going to continue fooling around, so I altered the name of the repository. 
    
@@ -13,9 +13,9 @@ int main( ){
          
    However, I would appreciate it if any one could offer me some good advice."
    
-   <<endl
+   << endl
    
-   <<"Sincerely, ME";
+   << "Sincerely, ME";
    
    return 0;
    

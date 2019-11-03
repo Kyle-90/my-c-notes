@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int main(void){
+	int indexNext, indexDelete;
+	int num;    //record how many people
+	int count=0;  //record how many group
+	int *p;
+	
+	scanf("%d", &num);
+	p = new int[num];
+	for(int i=0; i<num; i++)
+		scanf("%d", &p[i]);
+	
+	for(int indexStart=0; indexStart<num; indexStart++){
+		if( p[indexStart] != -1){
+			indexNext = p[indexStart];
+			p[indexStart] = -1;
+			printf("indexNext: %d\n", indexNext);
+			while( indexNext!=indexStart ){
+				indexDelete = indexNext;
+				indexNext = p[indexNext];
+				p[indexDelete] = -1;
+				
+				printf("indexNext: %d\n", indexNext);
+			}
+			count++;
+		}
+		printf("\n");
+	}
+	printf("%d", count);
+	return 0;
+}

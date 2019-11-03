@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int ans1=-1;
+int ans2=-1;
+int main(){
+	int a;
+	cin>>a;
+	int b[20];
+	for(int i=0;i<a;i++){
+		cin>>b[i];
+	}
+	for(int i=0;i<a;i++){
+		for(int j=i;j<a;j++){
+			if (b[i]>b[j])
+			swap(b[i],b[j]);
+		}
+	}
+	for(int i=0;i<a;i++){
+		if (b[i]<60)
+		ans1=b[i];
+	}
+	for(int j=a-1;j>=0;j--){
+		if (b[j]>60)
+		ans2=b[j];
+		cout<<b[j]<<" ";
+	}
+	for(int i=0;i<a;i++){
+		cout<<b[i]<<" ";
+	}
+	cout<<endl;
+	if (ans1!=-1)
+	cout<<ans1<<endl;
+	else cout<<"best case"<<endl;
+	if (ans2!=-1)
+	cout<<ans2<<endl;
+	else cout<<"worst case"<<endl;
+	
+} 

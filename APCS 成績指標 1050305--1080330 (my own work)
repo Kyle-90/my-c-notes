@@ -34,5 +34,5 @@ int main(){
 	if (ans2!=-1)
 	cout<<ans2<<endl;
 	else cout<<"worst case"<<endl;
-	
+	return 0;
 } 

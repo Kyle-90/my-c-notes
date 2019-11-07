@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int *parent,*child,*distance,*site,*done,distance_num=0,nochild=0, 
+int search_one(){
+	for(int i=0;i<n;i++){
+		if(done[i]!=1){
+			 
+		}
+	}
+}
+
+int main(){
+	cin>>n;
+	parent=new int[n];
+	child=new int[n];
+	distance=new int[n];
+	site=new int[n];
+	done=new int[n];
+    for(int i=0;i<n;i++){
+		cin>>parent[i]>>child[i];
+	}
+	for(int i=0;i<n;i++){
+		search_one(n);
+	}
+    return 0;
+}
+
+
+
+
+
+
+
